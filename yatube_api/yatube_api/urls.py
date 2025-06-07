@@ -24,11 +24,28 @@ comment_detail = CommentViewSet.as_view({
 })
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/api-token-auth/', obtain_auth_token, name='api_token_auth'),
-    path('api/v1/', include(router.urls)),
-    path('api/v1/posts/<int:post_id>/comments/', comment_list, name='comment-list'),
-    path('api/v1/posts/<int:post_id>/comments/<int:pk>/', comment_detail, name='comment-detail')
+    path(
+        'admin/',
+        admin.site.urls
+    ),
+    path(
+        'api/v1/api-token-auth/',
+        obtain_auth_token,
+        name='api_token_auth'
+    ),
+    path(
+        'api/v1/',
+        include(router.urls)
+    ),
+    path(
+        'api/v1/posts/<int:post_id>/comments/',
+        comment_list,
+        name='comment-list'
+    ),
+    path('api/v1/posts/<int:post_id>/comments/<int:pk>/',
+         comment_detail,
+         name='comment-detail'
+         ),
 ]
 
 
@@ -39,11 +56,3 @@ if settings.DEBUG:
     urlpatterns += static(
         settings.STATIC_URL, document_root=settings.STATIC_ROOT
     )
-
-# api/v1/api-token-auth/
-# api/v1/posts/
-# api/v1/posts/{post_id}/
-# api/v1/groups/
-# api/v1/groups/{group_id}/
-# api/v1/posts/{post_id}/comments/
-# api/v1/posts/{post_id}/comments/{comment_id}/
