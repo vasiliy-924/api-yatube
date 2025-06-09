@@ -1,3 +1,9 @@
+"""URL-конфигурация проекта Yatube API.
+
+Этот модуль определяет URL-маршруты для всего проекта.
+Включает маршруты для админ-панели и API.
+"""
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin

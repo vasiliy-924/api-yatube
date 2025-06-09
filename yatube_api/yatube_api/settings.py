@@ -1,3 +1,9 @@
+"""Настройки проекта Yatube API.
+
+Этот модуль содержит все настройки Django проекта Yatube API.
+Включает настройки базы данных, аутентификации, REST Framework и другие.
+"""
+
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -5,8 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'm%(5u7nv9j2%@3xb%#c3p-$9&0$kq$j6l@9+@ogairu48a+dy+'
 
+# Режим отладки (в продакшене должно быть False)
 DEBUG = True
 
+# Разрешенные хосты (в продакшене нужно указать конкретные домены)
 ALLOWED_HOSTS = ['*']
 
 
